@@ -5,8 +5,30 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:YourWallet"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="350" Width="559">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="119"/>
+            <RowDefinition/>
+            <RowDefinition Height="35"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="160"/>
+        </Grid.ColumnDefinitions>
+        <GroupBox x:Name="exchangeBox" Grid.Column="1" Header="Курсы" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="105" Width="140">
+            <StackPanel HorizontalAlignment="Left" Height="74" Margin="10,5,0,0" VerticalAlignment="Top" Width="110">
+                <Label x:Name="exUSDlbl" Content="USD: "/>
+                <Label x:Name="exEURlbl" Content="EUR: " Margin="0,0,15,0"/>
+                <Button x:Name="exVRN" Content="Курсы Воронежа"/>
+            </StackPanel>
+        </GroupBox>
+        <DataGrid x:Name="dataGrid" Grid.RowSpan="2" Margin="0,0,0,5"/>
+        <WrapPanel HorizontalAlignment="Left" Height="35" Grid.Row="2" VerticalAlignment="Top" Width="391" RenderTransformOrigin="-0.23,-0.03">
+            <GridSplitter x:Name="gridSplitter1" Height="32" Width="5"/>
+            <Button x:Name="btnAdd" Content="Добавить" Width="100" Height="30"/>
+            <GridSplitter x:Name="gridSplitter" Height="32" Width="30"/>
+            <Button x:Name="btnDel" Content="Удалить" Width="100" Height="30"/>
+        </WrapPanel>
     </Grid>
 </Window>
